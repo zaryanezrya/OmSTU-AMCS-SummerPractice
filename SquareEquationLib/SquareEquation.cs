@@ -44,6 +44,7 @@ public class SquareEquation
                 double[] ans = new double[]{};
                 return ans;
             }
+            
         }
     }
 }
