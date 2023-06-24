@@ -7,8 +7,9 @@ public class SquareEquation
         double[] answer = new double[0];
         double x1;
         double x2;
+        double eps = Math.Pow(10, -9);
 
-        if (Double.IsPositiveInfinity(a) || Double.IsNegativeInfinity(a) || Math.Abs(a) < Double.Epsilon || Double.IsNaN(a))
+        if (Double.IsPositiveInfinity(a) || Double.IsNegativeInfinity(a) || Math.Abs(a) < eps || Double.IsNaN(a))
         {
             throw new System.ArgumentException();
         }
@@ -23,21 +24,19 @@ public class SquareEquation
 
         double D = (b * b) - (4.0 * a * c);
         
-        if (D > -Double.Epsilon && D < Double.Epsilon)
+        if (D > -eps && D < eps)
         {
             answer = new double[1];
 
-            D = 0;
-
-            x1 = -(b + Math.Sign(b) * Math.Sqrt(D)) / 2 ;
+            x1 = (-b) / 2 * a ;
 
             answer[0] = x1;                  
         }
-        if(D >= Double.Epsilon)
+        if(D >= eps)
         {
             answer = new double[2];
             
-            x1 = -(b + Math.Sign(b) * Math.Sqrt(D)) / 2 ;
+            x1 = -(b + Math.Sign(b) * Math.Sqrt(D)) / 2 + 0;
             x2 = c / x1;
 
             answer[0] = x1;
