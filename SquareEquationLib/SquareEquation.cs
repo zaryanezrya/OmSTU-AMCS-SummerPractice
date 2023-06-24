@@ -10,7 +10,7 @@ public class SquareEquation
         double negative = double.NegativeInfinity;
         double eps = double.Epsilon;
         double NaN = 0.0/0.0;
-        if ((a==0) || (a==positive) || (a==negative) || (a==NaN))
+        if ((a==0) ||(a==positive) || (a==negative) || (a==NaN))
         {
             throw new System.ArgumentException();
         }
@@ -18,30 +18,21 @@ public class SquareEquation
         {
             throw new System.ArgumentException();
         }
-        else if ((c==positive) || (c==negative) || (c==NaN))
+        if ((c==positive) || (c==negative) || (c==NaN))
         {
             throw new System.ArgumentException();
         }
         else
         {
             double D = Math.Sqrt(Math.Pow(b,2)-4*a*c);
-            if(D>=0)
+            if(D>0)
             {
-                if(D>0)
-                {
-                    double x1 = -(b + Math.Sign(b)*D)/2;
-                    double x2 = c/x1;
-                    double[] ans = new double[2]{x1,x2};
-                    return ans;
-                }
-                else
-                {
-                    double x1 = -(b + Math.Sign(b)*D)/2;
-                    double[] ans = new double[1]{x1};
-                    return ans;
-                }
+                double x1 = -(b + Math.Sign(b)*D)/2;
+                double x2 = c/x1;
+                double[] ans = new double[2]{x1,x2};
+                return ans;
             }
-            else if((-eps<D) && (D<0))
+            else if (D==0)
             {
                 double x1 = -(b + Math.Sign(b)*D)/2;
                 double[] ans = new double[1]{x1};
