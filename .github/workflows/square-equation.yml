@@ -4,6 +4,8 @@ name: square equation test
 on:
   push:
     branches: ["square_equation"]
+    paths:
+      - ".github/workflows/square_equation.yml"
 
 jobs:
   build:
