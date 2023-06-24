@@ -5,7 +5,7 @@ public class SquareEquation
     public static double[] Solve(double a, double b, double c)
     {
         double[] solution;
-        double e = 1e-9;    
+        double e = 1e-8;    
 
         if ((a < e && a > -e) || double.IsInfinity(a) || double.IsInfinity(b) || double.IsInfinity(c)
             || double.IsNaN(a) || double.IsNaN(b) || double.IsNaN(c))
