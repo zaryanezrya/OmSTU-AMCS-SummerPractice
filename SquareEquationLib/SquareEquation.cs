@@ -26,5 +26,6 @@ public class SquareEquation
             return new double[] {x1};
         
         return new double[] {x1, x2};   
+        
     }
 }
