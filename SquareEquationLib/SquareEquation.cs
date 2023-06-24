@@ -6,7 +6,7 @@ public class SquareEquation
     {        
         const double TOLERANCE = 0.000000001;
 
-        if (a < TOLERANCE)
+        if (Math.Abs(a) < TOLERANCE)
             throw new System.ArgumentException();
 
         foreach (double x in new double[] {a, b, c})
