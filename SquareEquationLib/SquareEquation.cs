@@ -38,6 +38,12 @@ public class SquareEquation
                 double[] ans = new double[1]{x1};
                 return ans;
             }
+            else if((-1*eps<D) && (D<0))
+            {
+                double x1 = -(b + Math.Sign(b)*D)/2;
+                double[] ans = new double[1]{x1};
+                return ans;
+            }
             else
             {
                 double[] ans = new double[]{};
