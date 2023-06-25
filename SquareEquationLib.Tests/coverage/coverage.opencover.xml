@@ -1,0 +1,143 @@
+{
+  "SquareEquationLib.dll": {
+    "/home/ubuntu/projects/OmSTU-AMCS-SummerPractice2023/SquareEquationLib/SquareEquation.cs": {
+      "SquareEquationLib.SquareEquation": {
+        "System.Double[] SquareEquationLib.SquareEquation::Solve(System.Double,System.Double,System.Double)": {
+          "Lines": {
+            "6": 13,
+            "9": 13,
+            "10": 1,
+            "12": 103,
+            "13": 34,
+            "14": 34,
+            "15": 1,
+            "16": 33,
+            "18": 11,
+            "19": 11,
+            "20": 3,
+            "22": 8,
+            "23": 8,
+            "25": 8,
+            "26": 5,
+            "28": 3,
+            "29": 11
+          },
+          "Branches": [
+            {
+              "Line": 9,
+              "Offset": 20,
+              "EndOffset": 22,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 9,
+              "Offset": 20,
+              "EndOffset": 28,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 12
+            },
+            {
+              "Line": 12,
+              "Offset": 106,
+              "EndOffset": 54,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 34
+            },
+            {
+              "Line": 14,
+              "Offset": 69,
+              "EndOffset": 71,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 33
+            },
+            {
+              "Line": 14,
+              "Offset": 69,
+              "EndOffset": 80,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            },
+            {
+              "Line": 14,
+              "Offset": 85,
+              "EndOffset": 87,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 14,
+              "Offset": 85,
+              "EndOffset": 93,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 33
+            },
+            {
+              "Line": 12,
+              "Offset": 106,
+              "EndOffset": 108,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 11
+            },
+            {
+              "Line": 19,
+              "Offset": 133,
+              "EndOffset": 135,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 5
+            },
+            {
+              "Line": 19,
+              "Offset": 133,
+              "EndOffset": 157,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 6
+            },
+            {
+              "Line": 19,
+              "Offset": 162,
+              "EndOffset": 164,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 3
+            },
+            {
+              "Line": 19,
+              "Offset": 162,
+              "EndOffset": 174,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 8
+            },
+            {
+              "Line": 25,
+              "Offset": 222,
+              "EndOffset": 224,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 5
+            },
+            {
+              "Line": 25,
+              "Offset": 222,
+              "EndOffset": 238,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 3
+            }
+          ]
+        }
+      }
+    }
+  }
+}
