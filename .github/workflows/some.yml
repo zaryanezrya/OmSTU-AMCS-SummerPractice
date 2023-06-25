@@ -3,7 +3,7 @@ name: unit-tests
 
 on:
   push:
-    branches: ["square_equation_unit_tests"]
+    branches: ["square_equation_unit_test"]
 
 
 jobs:
