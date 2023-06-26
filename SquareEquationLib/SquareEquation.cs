@@ -20,6 +20,10 @@ public class SquareEquation
             return new double[0];
 
         double x1 = -(b + Math.Sign(b)*Math.Sqrt(D))/2;
+        if (b == 0)
+        {
+            x1 = -Math.Sqrt(D)/2;
+        }
         double x2 = c/x1;
 
         if (D < TOLERANCE)
