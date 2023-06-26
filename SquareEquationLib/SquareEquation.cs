@@ -20,7 +20,7 @@ public class SquareEquation
         {
             throw new System.ArgumentException();
         }
-        if (d > double.Epsilon)
+        if (d >= double.Epsilon)
         {
             double x1 = -(b + Math.Sign(b) * Math.Sqrt(d)) / (2 * a);
             double x2 = c/x1;
