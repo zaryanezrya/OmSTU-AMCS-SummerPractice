@@ -18,7 +18,6 @@ public class SquareEquation
         if ((Double.IsNaN(c)) || (Double.IsNegativeInfinity(c)) || Double.IsPositiveInfinity(c)) 
             throw new ArgumentException();
            
-        
         if (D<=-epsilon){
            Result = new double[0];
         }
