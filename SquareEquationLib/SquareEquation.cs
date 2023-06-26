@@ -9,6 +9,7 @@ public class SquareEquation
         double d;
         double eps = 1e-9;
         double[] roots = Array.Empty<double>();
+        
         d = b * b - 4 * a * c;
 
         if (Math.Abs(a) < eps)
