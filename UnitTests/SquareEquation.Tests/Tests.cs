@@ -18,7 +18,7 @@ namespace SquareEquationSolver.UnitTests.Services
             {
                 result = false;
             }
-            Assert.False(result, "a = 0");
+            Assert.False(result, "a != 0");
         }
         [Fact]
         public void SquareEquation_aIsNaN()
