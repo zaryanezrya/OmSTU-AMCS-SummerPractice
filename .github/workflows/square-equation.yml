@@ -1,4 +1,4 @@
-name: Square equation unittest and coverage
+name: square equation test
 
 on:
   push:
@@ -17,10 +17,10 @@ jobs:
           dotnet-version: 7.0.x
 
       - name: Restore dependencies
-        run: dotnet restore SquareEqation/
+        run: dotnet restore SquareEquationLib
 
       - name: Build
-        run: dotnet build SquareEqation/ --no-restore /p:ContinuousIntegrationBuild=true
+        run: dotnet build SquareEquationLib --no-restore /p:ContinuousIntegrationBuild=true
 
-      - name: Unittest and coverage
-        run: dotnet test /p:CollectCoverage=true /p:ThresholdType=line /p:Threshold=100
+      - name: Test
+        run: ./SquareEquationTest ./SquareEquationLib/bin/Debug/net7.0/SquareEquationLib.dll
