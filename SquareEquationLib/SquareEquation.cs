@@ -12,7 +12,7 @@ public class SquareEquation
 
         if (Math.Abs(a) < double.Epsilon)
         {
-            throw new System.NotImplementedException();
+            throw new System.ArgumentException();
         }
         if (double.IsNaN(a) || double.IsNaN(b) || double.IsNaN(c) ||
             double.IsPositiveInfinity(a) || double.IsPositiveInfinity(b) || double.IsPositiveInfinity(c) ||
