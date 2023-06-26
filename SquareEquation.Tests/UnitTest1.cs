@@ -6,28 +6,28 @@ namespace SquareEquationLib.Tests;
 public class SquareEquationLib_isUnite
 {
     [Fact]
-    public void TwoRoots()
+    public void Solve_ReturnsTwoRoots()
     {
-        double[] expected = new double[] { 1, -4 };
-        double[] actual = SquareEquation.Solve(1, 3, -4);
+        double[] expected = new double[] { -3, 2 };
+        double[] actual = SquareEquation.Solve(1, 1, -6);
 
         Assert.Equal(expected, actual);
     }
 
     [Fact]
-    public void OneRoot()
+    public void Solve_ReturnsOneRoots()
     {
-        double[] expected = new double[] { -1 };
-        double[] actual = SquareEquation.Solve(2, 4, 2);
+        double[] expected = new double[] { 4 };
+        double[] actual = SquareEquation.Solve(1, -8, 16);
 
         Assert.Equal(expected, actual);
     }
 
     [Fact]
-    public void Nothing()
+    public void Solve_ReturnsEmpty()
     {
         double[] expected = new double[] { };
-        double[] actual = SquareEquation.Solve(2, 4, 3);
+        double[] actual = SquareEquation.Solve(2, 1, 4);
 
         Assert.Equal(expected, actual);
     }
@@ -35,16 +35,16 @@ public class SquareEquationLib_isUnite
 
 
     [Fact]
-    public void ThrowsArgumentException()
+    public void Solve_ThrowsArgumentException()
     {
-        Assert.Throws<System.ArgumentException>(() => SquareEquation.Solve(0, 3, 4));
+        Assert.Throws<System.ArgumentException>(() => SquareEquation.Solve(0, 2, 3));
     }
 
     [Theory]
-    [InlineData(double.NaN, 3, 4)]
-    [InlineData(2, 3, double.NegativeInfinity)]
-    [InlineData(3, double.PositiveInfinity, 4)]
-    public void WrongCoefficients(double a, double b, double c)
+    [InlineData(double.NaN, 2, 3)]
+    [InlineData(1, double.PositiveInfinity, 3)]
+    [InlineData(1, 2, double.NegativeInfinity)]
+    public void Solve_InvalidCoefficients(double a, double b, double c)
     {
         Assert.Throws<System.ArgumentException>(() => SquareEquation.Solve(a, b, c));
     }
