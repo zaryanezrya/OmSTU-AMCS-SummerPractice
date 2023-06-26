@@ -17,7 +17,7 @@ jobs:
           dotnet-version: 7.0.x
 
       - name: Restore dependencies
-        run: dotnet restore SquareEq/
+        run: dotnet restore SquareEquation/
 
       - name: Run tests
         run: dotnet test Tests/SquareEquation.Tests/
