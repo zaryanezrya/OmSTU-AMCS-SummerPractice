@@ -37,13 +37,13 @@ public class SquareEquationLib_isUnite
     [Fact]
     public void ThrowsArgumentException()
     {
-        Assert.Throws<System.ArgumentException>(() => SquareEquation.Solve(0, 1, 2));
+        Assert.Throws<System.ArgumentException>(() => SquareEquation.Solve(0, 3, 4));
     }
 
     [Theory]
-    [InlineData(4, double.NaN, 1)]
-    [InlineData(4, 5, double.NegativeInfinity)]
-    [InlineData(double.PositiveInfinity, 1, 2)]
+    [InlineData(double.NaN, 3, 4)]
+    [InlineData(2, 3, double.NegativeInfinity)]
+    [InlineData(3, double.PositiveInfinity, 4)]
     public void WrongCoefficients(double a, double b, double c)
     {
         Assert.Throws<System.ArgumentException>(() => SquareEquation.Solve(a, b, c));
