@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<coverage line-rate="1" branch-rate="0.9" version="1.9" timestamp="1687763469" lines-covered="26" lines-valid="26" branches-covered="27" branches-valid="30">
+<coverage line-rate="1" branch-rate="1" version="1.9" timestamp="1687763469" lines-covered="26" lines-valid="26" branches-covered="27" branches-valid="30">
   <sources>
     <source>/</source>
   </sources>
   <packages>
-    <package name="SquareEquationLib" line-rate="1" branch-rate="0.9" complexity="30">
+    <package name="SquareEquationLib" line-rate="1" branch-rate="1" complexity="30">
       <classes>
-        <class name="SquareEquationLib.SquareEquation" filename="home/ubuntu/OmSTU/SquareEquationLib/SquareEquation.cs" line-rate="1" branch-rate="0.9" complexity="30">
+        <class name="SquareEquationLib.SquareEquation" filename="home/ubuntu/OmSTU/SquareEquationLib/SquareEquation.cs" line-rate="1" branch-rate="1" complexity="30">
           <methods>
-            <method name="Solve" signature="(System.Double,System.Double,System.Double)" line-rate="1" branch-rate="0.9" complexity="30">
+            <method name="Solve" signature="(System.Double,System.Double,System.Double)" line-rate="1" branch-rate="1" complexity="30">
               <lines>
                 <line number="6" hits="7" branch="False" />
                 <line number="7" hits="7" branch="False" />
@@ -30,10 +30,10 @@
                   </conditions>
                 </line>
                 <line number="15" hits="1" branch="False" />
-                <line number="16" hits="5" branch="True" condition-coverage="66.66% (4/6)">
+                <line number="16" hits="5" branch="True" condition-coverage="100% (6/6)">
                   <conditions>
-                    <condition number="125" type="jump" coverage="50%" />
-                    <condition number="133" type="jump" coverage="50%" />
+                    <condition number="125" type="jump" coverage="100%" />
+                    <condition number="133" type="jump" coverage="100%" />
                     <condition number="148" type="jump" coverage="100%" />
                   </conditions>
                 </line>
@@ -53,9 +53,9 @@
                 </line>
                 <line number="23" hits="1" branch="False" />
                 <line number="24" hits="1" branch="False" />
-                <line number="25" hits="3" branch="True" condition-coverage="75% (3/4)">
+                <line number="25" hits="3" branch="True" condition-coverage="100% (4/4)">
                   <conditions>
-                    <condition number="223" type="jump" coverage="50%" />
+                    <condition number="223" type="jump" coverage="100%" />
                     <condition number="237" type="jump" coverage="100%" />
                   </conditions>
                 </line>
@@ -93,10 +93,10 @@
               </conditions>
             </line>
             <line number="15" hits="1" branch="False" />
-            <line number="16" hits="5" branch="True" condition-coverage="66.66% (4/6)">
+            <line number="16" hits="5" branch="True" condition-coverage="100% (6/6)">
               <conditions>
-                <condition number="125" type="jump" coverage="50%" />
-                <condition number="133" type="jump" coverage="50%" />
+                <condition number="125" type="jump" coverage="100%" />
+                <condition number="133" type="jump" coverage="100%" />
                 <condition number="148" type="jump" coverage="100%" />
               </conditions>
             </line>
@@ -116,9 +116,9 @@
             </line>
             <line number="23" hits="1" branch="False" />
             <line number="24" hits="1" branch="False" />
-            <line number="25" hits="3" branch="True" condition-coverage="75% (3/4)">
+            <line number="25" hits="3" branch="True" condition-coverage="100% (4/4)">
               <conditions>
-                <condition number="223" type="jump" coverage="50%" />
+                <condition number="223" type="jump" coverage="100%" />
                 <condition number="237" type="jump" coverage="100%" />
               </conditions>
             </line>
