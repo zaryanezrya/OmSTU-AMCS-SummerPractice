@@ -7,7 +7,7 @@ public class SquareEquation
     public static double[] Solve(double a, double b, double c)
     {
         double d;
-        double[] roots = new double[0];
+        double[] roots = {};
         d = b * b - 4 * a * c;
 
         if (Math.Abs(a) < double.Epsilon)
