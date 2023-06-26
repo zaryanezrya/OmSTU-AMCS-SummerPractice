@@ -6,7 +6,7 @@ namespace SquareEquationLib.Tests;
 public class SquareEquationLib_isUnite
 {
     [Fact]
-    public void Solve_ReturnsTwoRoots()
+    public void TwoRoots()
     {
         double[] expected = new double[] { -3, 2 };
         double[] actual = SquareEquation.Solve(1, 1, -6);
@@ -15,7 +15,7 @@ public class SquareEquationLib_isUnite
     }
 
     [Fact]
-    public void Solve_ReturnsOneRoots()
+    public void OneRoot()
     {
         double[] expected = new double[] { 4 };
         double[] actual = SquareEquation.Solve(1, -8, 16);
@@ -24,7 +24,7 @@ public class SquareEquationLib_isUnite
     }
 
     [Fact]
-    public void Solve_ReturnsEmpty()
+    public void Nothing()
     {
         double[] expected = new double[] { };
         double[] actual = SquareEquation.Solve(2, 1, 4);
@@ -35,7 +35,7 @@ public class SquareEquationLib_isUnite
 
 
     [Fact]
-    public void Solve_ThrowsArgumentException()
+    public void ThrowsArgumentException()
     {
         Assert.Throws<System.ArgumentException>(() => SquareEquation.Solve(0, 2, 3));
     }
@@ -44,7 +44,7 @@ public class SquareEquationLib_isUnite
     [InlineData(double.NaN, 2, 3)]
     [InlineData(1, double.PositiveInfinity, 3)]
     [InlineData(1, 2, double.NegativeInfinity)]
-    public void Solve_InvalidCoefficients(double a, double b, double c)
+    public void WrongCoefficients(double a, double b, double c)
     {
         Assert.Throws<System.ArgumentException>(() => SquareEquation.Solve(a, b, c));
     }
