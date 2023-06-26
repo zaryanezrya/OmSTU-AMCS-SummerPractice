@@ -4,7 +4,7 @@ namespace SquareEquationLib;
 
 public class SquareEquation
 {
-    public /*static*/ double[] Solve(double a, double b, double c)
+    public double[] Solve(double a, double b, double c)
     {
         //Пользовался double.Epsilon, оно не работало, решил взять из презентации - заработало
         double eps = 1e-5;
@@ -12,15 +12,15 @@ public class SquareEquation
         {
             throw new System.ArgumentException();
         }
-        else if ((double.IsNaN(a)) || (double.IsNegativeInfinity(a)) || (double.IsPositiveInfinity(a)))
+        else if (double.IsNaN(a) || double.IsNegativeInfinity(a) || double.IsPositiveInfinity(a))
         {
             throw new ArgumentException();
         }
-        else if ((double.IsNaN(b)) || (double.IsNegativeInfinity(b)) || (double.IsPositiveInfinity(b)))
+        else if (double.IsNaN(b) || double.IsNegativeInfinity(b) || double.IsPositiveInfinity(b))
         {
             throw new ArgumentException();
         }
-        else if ((double.IsNaN(c)) || (double.IsNegativeInfinity(c)) || (double.IsPositiveInfinity(c)))
+        else if (double.IsNaN(c) || double.IsNegativeInfinity(c) || double.IsPositiveInfinity(c))
         {
             throw new ArgumentException();
         }
