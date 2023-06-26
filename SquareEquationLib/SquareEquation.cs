@@ -1,4 +1,4 @@
-﻿namespace SquareEquationLib;
+namespace SquareEquationLib;
 
 public class SquareEquation
 {
