@@ -1,4 +1,6 @@
-﻿namespace SquareEquationLib;
+﻿using System;
+
+namespace SquareEquationLib;
 
 public class SquareEquation
 {
@@ -6,28 +8,29 @@ public class SquareEquation
     {
         double d;
         double[] roots = new double[0];
-        d = b * b - 4 * c;
-        if (a == 0)
+        d = b * b - 4 * a * c;
+
+        if (Math.Abs(a) < double.Epsilon)
         {
-            throw new NotImplementedException();
+            throw new System.NotImplementedException();
         }
-        if ( double.IsNaN(a) || double.IsNaN(b) || double.IsNaN(c) ||
+        if (double.IsNaN(a) || double.IsNaN(b) || double.IsNaN(c) ||
             double.IsPositiveInfinity(a) || double.IsPositiveInfinity(b) || double.IsPositiveInfinity(c) ||
             double.IsNegativeInfinity(a) || double.IsNegativeInfinity(b) || double.IsNegativeInfinity(c))
         {
-            throw new ArgumentException();
+            throw new System.ArgumentException();
         }
         if (d > 0)
         {
-            double x1 = (-b + Math.Sqrt(d)) / 2;
-            double x2 = (-b - Math.Sqrt(d)) / 2;
+            double x1 = -(b + Math.Sign(b) * Math.Sqrt(d)) / (2 * a);
+            double x2 = c/x1;
             roots = new double[2];
             roots[0] = x1; roots[1] = x2;
             return roots;
         }
-        else if (d < -double.Epsilon)
+        else if (Math.Abs(d) < double.Epsilon)
         {
-            double x1 = (-b + Math.Sqrt(d)) / 2;
+            double x1 = -(b + Math.Sign(b) * Math.Sqrt(d)) / (2 * a);
             roots = new double[1];
             roots[0] = x1;
             return roots;
@@ -37,7 +40,7 @@ public class SquareEquation
             return roots;
         }
 
-       
+
     }
 
 }
