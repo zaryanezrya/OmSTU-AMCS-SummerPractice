@@ -1,8 +1,8 @@
-name: square equation test
+name: Square equation unittest and coverage
 
 on:
   push:
-    branches: ["square_equation"]
+    branches: ["unittest"]
 
 jobs:
   build:
@@ -17,16 +17,10 @@ jobs:
           dotnet-version: 7.0.x
 
       - name: Restore dependencies
-        run: dotnet restore SquareEquationLib
+        run: dotnet restore SquareEq/
 
       - name: Build
-        run: dotnet build SquareEquationLib --no-restore /p:ContinuousIntegrationBuild=true
+        run: dotnet build SquareEq/ --no-restore /p:ContinuousIntegrationBuild=true
 
-      - name: Test
-        run: ./SquareEquationTest ./SquareEquationLib/bin/Debug/net7.0/SquareEquationLib.dll
-      
-      - name: Run tests
-        run: dotnet test Tests/SquareEquation.Tests/
-        
-      - name: Check code coverage
-        run: dotnet tool install -g dotnet-reportgenerator-globaltool && dotnet test Tests/SquareEquation.Tests/ --collect:"XPlat Code Coverage" --settings coverlet.runsettings && reportgenerator "-reports:Tests/SquareEquation.Tests/coverage.opencover.xml" "-targetdir:Tests/SquareEquation.Tests/CoverageReport" -reporttypes:"Html;HtmlSummary;JsonSummary"
+      - name: Unittest and coverage
+        run: dotnet test /p:CollectCoverage=true /p:ThresholdType=line /p:Threshold=100
