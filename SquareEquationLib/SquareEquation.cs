@@ -20,7 +20,7 @@ public class SquareEquation
         {
             throw new System.ArgumentException();
         }
-        if (d > 0)
+        if (d >= 0)
         {
             double x1 = -(b + Math.Sign(b) * Math.Sqrt(d)) / (2 * a);
             double x2 = c/x1;
