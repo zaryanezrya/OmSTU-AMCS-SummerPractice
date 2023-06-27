@@ -28,10 +28,10 @@ jobs:
         run: dotnet build SquareEquationLib.Tests
 
       - name: Testing
-        run: dotnet test SquareEquationLib.Tests --collect:"XPlat Code Coverage"
+        run: dotnet test SquareEquation.Tests --collect:"XPlat Code Coverage"
       - name: Coverage
         uses: codecov/codecov-action@v1.2.0
         with:
-          files: ./SquareEquationLib.Tests/TestResults/**/coverage.cobertura.xml
+          files: ./SquareEquation.Tests/TestResults/**/coverage.cobertura.xml
           name: codecov-umbrella
           fail_ci_if_error: true
