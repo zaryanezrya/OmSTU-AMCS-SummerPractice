@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <coverage line-rate="1" branch-rate="0.9444" version="1.9" timestamp="1687869553" lines-covered="26" lines-valid="26" branches-covered="17" branches-valid="18">
   <sources>
     <source>/</source>
