@@ -1,8 +1,8 @@
-name: square equation test
+name: unit_test
 
 on:
   push:
-    branches: ["square_equation"]
+    branches: ["SquareEquationTest"]
 
 jobs:
   build:
@@ -24,7 +24,9 @@ jobs:
 
       - name: Test
         run: ./SquareEquationTest ./SquareEquationLib/bin/Debug/net7.0/SquareEquationLib.dll
+      
+      - name: UnitTest
+        run: dotnet test
 
-      - name: Coverlet.MSBuild
-        run: cd XUnit.Coverlet.MSBuild/ && dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
-
+      - name: Coverage
+        run: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
