@@ -31,6 +31,7 @@ public class SquareEquation
             x2 = c / (a*x1);
             array = new double[] { x1, x2 };
         }
+        
         return array;
     }
 }
