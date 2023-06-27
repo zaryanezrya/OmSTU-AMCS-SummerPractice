@@ -1,6 +1,6 @@
 using Xunit;
 using SquareEquationLib;
-namespace SquareEquations_UnitTests;
+namespace SquareEquations_UnitTests; 
 
 public class UnitTest1
 {
