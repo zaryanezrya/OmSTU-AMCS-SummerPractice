@@ -12,7 +12,6 @@ public class UnitTests
     {
         Assert.Throws<ArgumentException>(() => SquareEquationLib.SquareEquation.Solve(a, b, c));
     }
-
     [Theory]
     [InlineData(10, 1, 5)]
     public void discriminant_less_zero (double a, double b, double c)
@@ -20,7 +19,6 @@ public class UnitTests
          double[] array = SquareEquationLib.SquareEquation.Solve(a, b, c);
          Assert.True(array.Length == 0);
     }
-
     [Theory]
     [InlineData(1, 0, 0)]
     public void discriminant_equals_zero(double a, double b, double c)
@@ -28,7 +26,6 @@ public class UnitTests
         double[] array = SquareEquationLib.SquareEquation.Solve(a, b, c);
         Assert.Equal(0, Math.Abs(a*Math.Pow(array[0], 2) + b*array[0] + c),Math.Pow(10,-6));
     }
-
     [Theory]
     [InlineData(1, 15, 5)]
     public void discriminant_more_zero(double a, double b, double c)
