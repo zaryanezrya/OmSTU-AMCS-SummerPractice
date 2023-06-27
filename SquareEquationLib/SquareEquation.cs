@@ -4,11 +4,16 @@ public class SquareEquation
     public static double[] Solve(double a, double b, double c)
     {
         double Epsilon=1e-9;
-        if (-Epsilon < a && a < Epsilon) throw new ArgumentException();
-        if ( new[] { a, b, c }.Any(double.IsNaN) || new[] { a, b, c }.Any(double.IsInfinity))
-            throw new ArgumentException();
         double D=b * b - 4 *a*c;
         double[] Result1 = new double[] { };
+
+        if (-Epsilon < a && a < Epsilon) 
+        {
+            throw new ArgumentException();
+        }
+        if ( new[] { a, b, c }.Any(double.IsNaN) || new[] { a, b, c }.Any(double.IsInfinity))
+            throw new ArgumentException();
+        
         if (D <= -Epsilon) return Result1;
         else if (-Epsilon < D & D < Epsilon)
         { 

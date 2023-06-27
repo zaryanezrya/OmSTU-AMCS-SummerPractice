@@ -8,8 +8,8 @@ public class SquareEquationLib_isUnite
     [Fact]
     public void TwoRoots()
     {
-        double[] expected = new double[] { -3, 2 };
-        double[] actual = SquareEquation.Solve(1, 1, -6);
+        double[] expected = new double[] { -4, 3 };
+        double[] actual = SquareEquation.Solve(1, 1, -12);
 
         Assert.Equal(expected, actual);
     }
@@ -17,8 +17,8 @@ public class SquareEquationLib_isUnite
     [Fact]
     public void OneRoot()
     {
-        double[] expected = new double[] { 4 };
-        double[] actual = SquareEquation.Solve(1, -8, 16);
+        double[] expected = new double[] { -3 };
+        double[] actual = SquareEquation.Solve(1, 6, 9);
 
         Assert.Equal(expected, actual);
     }
@@ -27,7 +27,7 @@ public class SquareEquationLib_isUnite
     public void Nothing()
     {
         double[] expected = new double[] { };
-        double[] actual = SquareEquation.Solve(2, 1, 4);
+        double[] actual = SquareEquation.Solve(4, 2, 8);
 
         Assert.Equal(expected, actual);
     }
