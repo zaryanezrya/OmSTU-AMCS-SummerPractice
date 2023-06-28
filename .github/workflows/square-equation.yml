@@ -23,11 +23,11 @@ jobs:
         run: dotnet build SquareEquationLib/ --no-restore /p:ContinuousIntegrationBuild=true
 
       - name: Test
-        run: ./SquareEquationTest ./SquareEquationLib/bin/Debug/net7.0/SquareEquationLib.dll
+        run: C:\Users\Данил\OmSTU-AMCS-SummerPractice2023-1\SquareEquationTest C:\Users\Данил\OmSTU-AMCS-SummerPractice2023-1\SquareEquationLib\SquareEquationLib.dll
 
       - name: Coverage
         run: dotnet test /p:CollectCoverage=true /p:ThresholdType=line /p:Threshold=100
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
         with: 
-          token: 
+          token: 472de5d2-1c6f-4a35-91eb-5ccc8243d7b9
