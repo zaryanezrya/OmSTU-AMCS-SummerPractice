@@ -13,6 +13,6 @@ public class SquareEquation
         if (Math.Abs(D) < eps ) return new double[] {-(b + Math.Sign(b)*Math.Sqrt(D))/(2*a)}; 
         if (D <= -eps) return new double[0];
         double x1 = -(b + Math.Sign(b)*Math.Sqrt(D))/(2*a), x2 = c/x1;
-        return new double[] {x1,x2};
+        return new double[] {x1,x2}; 
     }
 }
