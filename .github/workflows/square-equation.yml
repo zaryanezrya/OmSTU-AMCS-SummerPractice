@@ -23,7 +23,7 @@ jobs:
         run: dotnet build SquareEquationLib/ --no-restore /p:ContinuousIntegrationBuild=true
 
       - name: Test
-        run: C:\Users\Данил\OmSTU-AMCS-SummerPractice2023-1\SquareEquationTest C:\Users\Данил\OmSTU-AMCS-SummerPractice2023-1\SquareEquationLib\SquareEquationLib.dll
+        run: SquareEquationTest SquareEquationLib\SquareEquationLib.dll
 
       - name: Coverage
         run: dotnet test /p:CollectCoverage=true /p:ThresholdType=line /p:Threshold=100
