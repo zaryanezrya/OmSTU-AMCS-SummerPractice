@@ -18,7 +18,7 @@ jobs:
           dotnet-version: 7.0.x
 
       - name: Restore dependencies
-        run: dotnet restore SpaceBattleLib
+        run: dotnet restore ./SpaceBattleProject/SpaceBattleLib
 
       - name: Build
         run: dotnet build ./SpaceBattleProject/SpaceBattleLib --no-restore /p:ContinuousIntegrationBuild=true
