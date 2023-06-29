@@ -6,7 +6,7 @@
   <packages>
     <package name="SquareEquationLib" line-rate="1" branch-rate="0.9444" complexity="18">
       <classes>
-        <class name="SquareEquationLib.SquareEquation" filename="C:\Users\Данил\OmSTU-AMCS-SummerPractice2023-1\Equation_Unit_Tests\SquareEquations_UnitTests\SquareEqTest.cs" line-rate="1" branch-rate="0.9444" complexity="18">
+        <class name="SquareEquationLib.SquareEquation" filename="/home/runner/work/_temp/9cc038cf-ba43-40fb-b524-339179c2ff96.sh" line-rate="1" branch-rate="0.9444" complexity="18">
           <methods>
             <method name="Solve" signature="(System.Double,System.Double,System.Double)" line-rate="1" branch-rate="0.9444" complexity="18">
               <lines>
