@@ -9,7 +9,7 @@ public class UnitTest1
     {
         Assert.Throws<ArgumentException>(() => SquareEquation.Solve(0, 0, 0));
     }
-    
+
     [Theory]
     [InlineData(double.NaN,1,1)]
     [InlineData(1,double.NaN,1)]
