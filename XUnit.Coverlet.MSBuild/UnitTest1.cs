@@ -4,58 +4,58 @@ namespace XUnit.Coverlet.MSBuild;
 
 public class UnitTest1
 {
-    const double eps = 1e-9;
-
-    [Fact]
-    public void Is_A_0()
+    [Theory]
+    [InlineData(0, 1, 8)]
+    [InlineData(double.PositiveInfinity, 6, 2)]
+    [InlineData(1, double.PositiveInfinity, 2)]
+    [InlineData(1, 4, double.PositiveInfinity)]
+    [InlineData(double.NegativeInfinity, 2, 7)]
+    [InlineData(1, double.NegativeInfinity, 2)]
+    [InlineData(1, 1, double.NegativeInfinity)]
+    [InlineData(double.NaN, 2, 2)]
+    [InlineData(1, double.NaN, 1)]
+    [InlineData(1, 1, double.NaN)]
+    public void TestArgumentException(double a, double b, double c)
     {
-        Assert.Throws<System.ArgumentException>(() => SquareEquation.Solve(0,1,1));
-    }
-
-    [Fact]
-    public void Is_A_NaN()
-    {
-        Assert.Throws<System.ArgumentException>(() => SquareEquation.Solve(double.NaN,1,1));
-    }
-    [Fact]
-    public void Is_B_NaN()
-    {
-        Assert.Throws<System.ArgumentException>(() => SquareEquation.Solve(1,double.NaN,1));
-    }
-    [Fact]
-    public void Is_C_NaN()
-    {
-        Assert.Throws<System.ArgumentException>(() => SquareEquation.Solve(1,1,double.NaN));
+        Assert.Throws<ArgumentException>(() => SquareEquation.Solve(a, b, c));
     }
 
     [Theory]
-    [InlineData(-eps/2, 1, 1)]
-    [InlineData(eps/2, 2, 2)]
-    [InlineData(0, 1, 1)]
-    public void AisZero(double a, double b, double c)
+    [InlineData(5, 10, 5, -1, 9)]
+    [InlineData(6, -12, 6, 1, 9)]
+    [InlineData(4, 32, 64, -4, 9)]
+    [InlineData(4, 4, 1, -0.5, 9)]
+    public void TestOne(double a, double b, double c, double expected, int precision)
     {
-        Assert.Throws<System.ArgumentException>(() => SquareEquation.Solve(a,b,c));
+        double[] testOneSolve = SquareEquation.Solve(a, b, c);
+        Assert.Equal(expected, testOneSolve[0], precision);
     }
 
     [Theory]
-    [InlineData(1, 2, 1)]
-    [InlineData(1, 0, 0)]
-    public void One_Solution(double a, double b, double c)
+    [InlineData(1, 17, -18, -18, 1, 9)]
+    [InlineData(5, 7, 2, -1, -0.4, 9)]
+    [InlineData(1, -11, 18, 9, 2, 9)]
+    [InlineData(3, -11, 4, 3.2573339575, 0.4093327091, 9)]
+    [InlineData(2, 15, 28, -4, -3.5, 9)]
+    public void TestTwo(double a, double b, double c, double expected1, double expected2,  int precision)
     {
-        double x = SquareEquationLib.SquareEquation.Solve(a,b,c)[0];
-        Assert.Equal(0, Math.Abs(a*Math.Pow(x,2)+b*x+c), eps);
-    }
-
-    [Theory]
-    [InlineData(-4, 5, 15)]
-    [InlineData(3, 6, -15)]
-    [InlineData(1, -5, 1)]
-    public void Two_Solution(double a, double b, double c)
-    {
-        double[] array = SquareEquationLib.SquareEquation.Solve(a,b,c);
-        foreach(double x in array)
+        double[] testTwoSolve = SquareEquation.Solve(a, b, c);
+        double[] expected = {expected1, expected2};
+        Assert.True(testTwoSolve.Length == expected.Length);
+        for (int i = 0; i < testTwoSolve.Length; i++)
         {
-            Assert.Equal(0, Math.Abs(a*Math.Pow(x,2)+b*x+c), eps);
-        } 
+            Assert.Equal(expected[i], testTwoSolve[i], precision);
+        }
+    }
+    
+    [Theory]
+    [InlineData(1, 8, 25)]
+    [InlineData(2, 16, 38)]
+    [InlineData(1, 5, 100)]
+    [InlineData(8, -24, 200)]
+    public void TestNegative(double a, double b, double c)
+    {
+        double[] test = SquareEquation.Solve(a, b, c);
+        Assert.Empty(test);
     }
 }
