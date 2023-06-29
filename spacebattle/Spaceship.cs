@@ -21,9 +21,9 @@
             CanAction = false;
         }
 
-        public int[]? MovingAction()
+        public int[] MovingAction()
         {
-            if (coordinates != null & speedvector != null & CanAction)
+            if (coordinates is not null & speedvector is not null & CanAction)
             {
                 return new int[] { coordinates[0] + speedvector[0], coordinates[1] + speedvector[1] };
             }
