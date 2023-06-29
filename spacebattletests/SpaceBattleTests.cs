@@ -8,7 +8,6 @@ public class StepDefinitions
 {
     /*private double[] coords = new double[2];
     private double[] speed = new double[2];*/
-    private bool possibility_of_movement = true;
     private double[] coords = new double[2];
     private Exception r_exp = new Exception();
     private SpaceShip spaceShip = new SpaceShip();
