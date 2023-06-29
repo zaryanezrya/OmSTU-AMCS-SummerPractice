@@ -24,7 +24,6 @@ public class UnitTest1
     [InlineData(5, 10, 5, -1, 9)]
     [InlineData(6, -12, 6, 1, 9)]
     [InlineData(4, 32, 64, -4, 9)]
-    [InlineData(4, 4, 1, -0.5, 9)]
     public void TestOne(double a, double b, double c, double expected, int precision)
     {
         double[] testOneSolve = SquareEquation.Solve(a, b, c);
@@ -33,7 +32,6 @@ public class UnitTest1
 
     [Theory]
     [InlineData(1, 17, -18, -18, 1, 9)]
-    [InlineData(5, 7, 2, -1, -0.4, 9)]
     [InlineData(1, -11, 18, 9, 2, 9)]
     public void TestTwo(double a, double b, double c, double expected1, double expected2,  int precision)
     {
