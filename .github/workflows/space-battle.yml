@@ -18,9 +18,6 @@ jobs:
 
       - name: Restore dependencies
         run: dotnet restore SpaceBattle
-      
-      - name: UnitTest
-        run: dotnet test
 
-      - name: Coverage
+      - name: Coverage and Tests
         run: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
