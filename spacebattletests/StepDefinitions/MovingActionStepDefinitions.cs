@@ -9,7 +9,7 @@ namespace spacebattletests.StepDefinitions
     {
         Spaceship spaceship = new Spaceship();
         int[]? actual_coordinates;
-        Exception? exception;
+        Exception exception = new Exception();
 
         [Given(@"космический корабль находится в точке пространства с координатами \((.*), (.*)\)")]
         public void GivenCoordinates(int p0, int p1)
