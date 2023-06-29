@@ -26,4 +26,7 @@ jobs:
         run: ./SquareEquationTest ./SquareEquationLib/bin/Debug/net7.0/SquareEquationLib.dll
       
       - name: SquareEquationLib.Tests
-        run: ./ SquareEquationLib.Tests && dotnet test --collect:"XPlat Code Coverage"
+        run: cd SquareEquationLib.Tests && dotnet test --collect:"XPlat Code Coverage"
+      
+      - name: SquareEquationLib.Tests
+        run: cd SquareEquationLib.Tests && dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
