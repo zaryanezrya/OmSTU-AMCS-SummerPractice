@@ -9,6 +9,7 @@ public class UnitTest1
     {
         Assert.Throws<ArgumentException>(() => SquareEquation.Solve(0, 0, 0));
     }
+    
     [Theory]
     [InlineData(double.NaN,1,1)]
     [InlineData(1,double.NaN,1)]
@@ -19,10 +20,12 @@ public class UnitTest1
     [InlineData(double.NegativeInfinity,1,1)]
     [InlineData(1,double.NegativeInfinity,1)]
     [InlineData(1,1,double.NegativeInfinity)]
+
     public void AnyInvalidArgument(double a,double b, double c)
     {
         Assert.Throws<ArgumentException>(() => SquareEquation.Solve(a, b, c));
     }
+
     [Fact]
     public void D_CloseToZero()
     {
@@ -35,6 +38,7 @@ public class UnitTest1
         Assert.Equal(roots[0],expected_roots[0]);
 
     }
+
     [Theory]
         [InlineData(1, 0, 1, new double[] {})]
         [InlineData(1,4,4, new double[] {-2})]
