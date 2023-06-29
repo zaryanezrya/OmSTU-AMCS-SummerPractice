@@ -24,7 +24,7 @@ jobs:
         run: dotnet build ./SpaceBattleProject/SpaceBattleLib --no-restore /p:ContinuousIntegrationBuild=true
 
       - name: Test
-        run: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
+        run: cd SpaceBattleProject && dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
 
       - name: Codecov
         uses: codecov/codecov-action@v3
