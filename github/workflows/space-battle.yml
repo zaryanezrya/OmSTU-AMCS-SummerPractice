@@ -3,7 +3,7 @@ name: square equation test
 
 on:
   push:
-    branches: ["sqaure_equation_bdd"]
+    branches: ["spacebattle"]
 
 jobs:
   build:
