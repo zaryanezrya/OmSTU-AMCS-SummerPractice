@@ -4,7 +4,7 @@
     {
         private int[]? coordinates = null;
         private int[]? speedvector = null;
-        private bool CanAction = true;
+        private bool сanAction = true;
 
         public void SetCoordinates(int x, int y)
         {
@@ -18,12 +18,12 @@
 
         public void CannotAction()
         {
-            CanAction = false;
+            сanAction = false;
         }
 
         public int[] MovingAction()
         {
-            if (coordinates is not null & speedvector is not null & CanAction)
+            if (coordinates is not null & speedvector is not null & сanAction)
             {
                 return new int[] { coordinates[0] + speedvector[0], coordinates[1] + speedvector[1] };
             }
