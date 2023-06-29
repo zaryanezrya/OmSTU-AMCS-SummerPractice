@@ -6,17 +6,18 @@ using TechTalk.SpecFlow;
 [Binding]
 public class StepDefinitions
 {
-    private double[] coords = new double[2];
-    private double[] speed = new double[2];
+    /*private double[] coords = new double[2];
+    private double[] speed = new double[2];*/
     private bool possibility_of_movement = true;
+    private double[] coords = new double[2];
     private Exception r_exp = new Exception();
-    private SpaceBattle spaceBattle = new SpaceBattle();
+    private SpaceShip spaceShip = new SpaceShip();
     [When("происходит прямолинейное равномерное движение без деформации")]
     public void CalculatedTheMovementOfTheSpaceShip()
     {
         try 
         {
-            coords = spaceBattle.Movement(coords,speed,possibility_of_movement);
+            coords = spaceShip.Movement();
         }
         catch (Exception e)
         {
@@ -24,46 +25,36 @@ public class StepDefinitions
         }
     }
     [Given(@"космический корабль находится в точке пространства с координатами \((.*), (.*)\)")]
-    public void GivenThePositionOfTheSpaceship(string x, string y) 
+    public void GivenThePositionOfTheSpaceship(double x, double y) 
     {
-        string[] i_coords = new string[2]{x,y}; 
-        for (var i = 0; i<2; i++)
-        {
-            coords[i] = Convert.ToDouble(i_coords[i]);
-        }
+        double[] in_coords = new double[2]{x,y};
+        spaceShip.SetSpaceShipPosition(in_coords);
     }
     [Given(@"имеет мгновенную скорость \((.*), (.*)\)")]
-    public void GivenTheInstantSpeed(string x_speed, string y_speed) 
+    public void GivenTheInstantSpeed(double x_speed, double y_speed) 
     {
-        string[] i_speed = new string[2]{x_speed,y_speed}; 
-        for (var i = 0; i<2; i++)
-        {
-            speed[i] = Convert.ToDouble(i_speed[i]);
-        }
+        double[] in_speed = new double[2]{x_speed,y_speed}; 
+        spaceShip.SetSpaceShipSpeed(in_speed);
     }
 
     [Given("изменить положение в пространстве космического корабля невозможно")]
     public void GivenThePositionInSpace() 
     {
-        possibility_of_movement = false;
+        spaceShip.SetSpaceShipPossOfMove(false);
     }
 
     [Given("космический корабль, положение в пространстве которого невозможно определить")]
     public void GivenThePositionCannotBeDetermined() 
     {
-        for(var i=0; i<2; i++)
-        {
-            coords[i] = double.NaN;
-        }
+        double[] in_coords = new double[2]{double.NaN,double.NaN};
+        spaceShip.SetSpaceShipPosition(in_coords);
     }
 
     [Given("скорость корабля определить невозможно")]
     public void GivenTheSpeedOfTheShipCannotBeDetermined() 
     {
-        for(var i=0; i<2; i++)
-        {
-            coords[i] = double.NaN;
-        }
+        double[] in_speed = new double[2]{double.NaN,double.NaN}; 
+        spaceShip.SetSpaceShipSpeed(in_speed);
     }
 
     [Then(@"возникает ошибка Exception")]
