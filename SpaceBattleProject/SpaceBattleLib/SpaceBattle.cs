@@ -15,15 +15,6 @@ public class SpaceBattle
         return true;
     }
     public SpaceBattle() {}
-    public SpaceBattle
-    (
-        double[] position,
-        double[] instantSpeed
-    )
-    {
-        this.CurrentPosition = position;
-        this.InstantSpeed = instantSpeed;
-    }
     public void SetCurrentPosition(double[] position)
     {
         this.CurrentPosition = position;
