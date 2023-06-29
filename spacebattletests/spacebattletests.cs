@@ -38,21 +38,21 @@ namespace spacebattletests
         [Given(@"космический корабль, положение в пространстве которого невозможно определить")]
         public void космический_корабль_положение_в_пространстве_которого_невозможно_определить()
         {
-            IsKnowPosition = false;
+            isKnowPosition = false;
         }
 
 
         [Given(@"скорость корабля определить невозможно")]
         public void скорость_корабля_определить_невозможно()
         {
-            IsKnowSpeed = false;
+            isKnowSpeed = false;
         }
 
 
         [Given(@"изменить положение в пространстве космического корабля невозможно")]
         public void изменить_положение_в_пространстве_космического_корабля_невозможно()
         {
-            IsCanMove = false;
+            isCanMove = false;
         }
 
 
@@ -60,7 +60,7 @@ namespace spacebattletests
         public void происходит_прямолинейное_равномерное_движениебез_деформации()
         {
             try{
-            total = spacebattle.spacebattle.Move(isCanMove, isKnowSpeed,
+            total = SpaceShip.Move(isCanMove, isKnowSpeed,
             isKnowPosition, speed, start);
             }
             catch{}
@@ -78,7 +78,7 @@ namespace spacebattletests
         [Then(@"возникает ошибка Exception")]
         public void возникает_ошибка_Exception ()
         {
-            Assert.Throws<Exception>(() => spacebattle.spacebattle.Move(isCanMove, isKnowSpeed,
+            Assert.Throws<Exception>(() => SpaceShip.Move(isCanMove, isKnowSpeed,
             isKnowPosition, speed, start));
         }
 

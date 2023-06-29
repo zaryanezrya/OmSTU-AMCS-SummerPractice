@@ -1,11 +1,7 @@
 ﻿namespace spacebattle;
 
-public class spacebattle
+public class SpaceShip
 {
-    private bool isCanMove, isKnowSpeed, isKnowPosition;
-    double [] Speed=new double [2];
-    double [] Position=new double [2];
-
     public static double [] Move (bool isCanMove, bool isKnowSpeed,
     bool isKnowPosition, double [] Speed, double [] Position){
         if (!isCanMove || !isKnowSpeed || !isKnowPosition){
