@@ -5,7 +5,7 @@ using TechTalk.SpecFlow;
 namespace spacebattletests.StepDefinitions
 {
     [Binding]
-    public class MovingActionStepDefinitions
+    public class StepDefinitions
     {
         Spaceship spaceship = new Spaceship();
         int[]? actual_coordinates;
@@ -85,12 +85,26 @@ namespace spacebattletests.StepDefinitions
             spaceship.SetAngleSpeed(angle_sp);
         }
 
-        [When(@"происходит прямолинейное равномерное движение без деформации")]
+        [When(@"происходит прямолинейное равномерное движение без деформации"), Scope(Tag = "Fuel")]
         public void WhenMovingActionFuelCheckOnly()
         {
             try
             {
                 remainingfuel = spaceship.FuelAfterAction();
+
+            }
+            catch (Exception ex)
+            {
+                exception = ex;
+            }
+        }
+
+        [When(@"происходит прямолинейное равномерное движение без деформации"), Scope(Tag = "Moving")]
+        public void WhenMovingAction()
+        {
+            try
+            {
+                actual_coordinates = spaceship.MovingAction();
 
             }
             catch (Exception ex)
