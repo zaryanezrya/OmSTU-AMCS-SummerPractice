@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SquareEquationLib\SquareEquationLib.csproj" />
+    <ProjectReference Include="..\..\SquareEquationLib\SquareEquationLib.csproj" />
   </ItemGroup>
 
 </Project>

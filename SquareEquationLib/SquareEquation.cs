@@ -1,47 +1,36 @@
 ﻿﻿namespace SquareEquationLib;
 
 public class SquareEquation
-{ 
+{
     public static double[] Solve(double a, double b, double c)
     {
-        double eps = 0.000000001;
-        double[] answer;
-
-        if (Math.Abs(a) < eps)
+        double x1,x2;
+        double[] array = new double[2];
+        double eps = 1e-9;
+        double d = b * b - 4 * a * c;
+        if (-eps < a && a < eps)
         {
             throw new System.ArgumentException();
         }
- 
-        foreach (double x in new double[] { a, b, c })
+        if ( new[] { a, b, c }.Any(double.IsNaN) || new[] { a, b, c }.Any(double.IsInfinity))
         {
-            if (double.IsNaN(x) || double.IsInfinity(x))
-            {
-                throw new System.ArgumentException();
-            }
+            throw new ArgumentException("Ошибка");
         }
-
-        double d = Math.Pow(b, 2) - 4 * a * c;
-
-        if (d < 0 && !(Math.Abs(d) < eps))
+        if (d<=-eps)
         {
-            answer = new double[0];
-
+            array = new double[0];
         }
-        else if (d < eps)
+        else if (-eps < d && d < eps)
         {
-            answer = new double[1];
-            answer[0] = -(b + Math.Sign(b) * Math.Sqrt(d)) / 2;
-
+            x1 = -b/(2*a);
+            array = new double[] { x1 };
         }
-        else
+        else 
         {
-            answer = new double[2];
-            answer[0] = -(b + Math.Sign(b) * Math.Sqrt(d)) / 2;
-            answer[1] = c / answer[0];
-
+            x1 = (2*c)/-(b+Math.Sign(b)*Math.Sqrt(d));
+            x2 = c / (a*x1);
+            array = new double[] { x1, x2 };
         }
-
-        return answer;
-
+        return array;
     }
 }
