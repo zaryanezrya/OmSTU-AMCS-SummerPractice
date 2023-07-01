@@ -1,8 +1,8 @@
-name: square test
+name: square equation test
 
 on:
   push:
-    branches: ["square_equation"]
+    branches: ["SpaceShip"]
 
 jobs:
   build:
@@ -17,10 +17,10 @@ jobs:
           dotnet-version: 7.0.x
 
       - name: Restore dependencies
-        run: dotnet restore SquareEquationLib
+        run: dotnet restore spacebattle
 
       - name: Build
-        run: dotnet build SquareEquationLib --no-restore /p:ContinuousIntegrationBuild=true
-
-      - name: Test
-        run: ./SquareEquationTest ./SquareEquationLib/bin/Debug/net7.0/SquareEquationLib.dll
+        run: dotnet build spacebattle --no-restore /p:ContinuousIntegrationBuild=true
+        
+      - name: UnitTest + Coverage
+        run: dotnet test /p:CollectCoverage=true /p:CoverletOutput=TestResults /p:CoverletOutputFormat=cobertura
