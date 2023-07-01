@@ -24,7 +24,13 @@ public class SquareEquation
         else
         {
             double[] Result3 = new double[2];
-            Result3[0] = -(b + Math.Sign(b) * Math.Sqrt(D)) / 2;
+            if (b == 0)
+            {
+                Result3[0] = -Math.Sqrt(D)/2;
+            }
+            else{
+                Result3[0] = -(b + Math.Sign(b) * Math.Sqrt(D)) / 2;
+            }
             Result3[1] = c / Result3[0];
             return Result3;
         }
