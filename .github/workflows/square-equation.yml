@@ -24,3 +24,9 @@ jobs:
 
       - name: Test
         run: ./SquareEquationTest ./SquareEquationLib/bin/Debug/net7.0/SquareEquationLib.dll
+        
+      - name: xUnit Tests
+        run: cd unit-testing-using-dotnet && dotnet test && cd ..
+        
+      - name: xUnit Tests Coverage
+        run: cd unit-testing-using-dotnet && dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura && cd ..
