@@ -1,8 +1,8 @@
-name: square equation test
+name: exercise7 test
 
 on:
   push:
-    branches: ["exercise7/solution"]
+    branches: ["exercise7"]
 
 jobs:
   build:
@@ -17,10 +17,10 @@ jobs:
           dotnet-version: 7.0.x
 
       - name: Restore dependencies
-        run: dotnet restore SpaceBattle
+        run: dotnet restore solution/SpaceBattle
 
       - name: Test Build
-        run: dotnet build SpaceBattle --no-restore /p:ContinuousIntegrationBuild=true
+        run: dotnet build solution/SpaceBattle --no-restore /p:ContinuousIntegrationBuild=true
 
       - name: Mytest
-        run: dotnet test SpaceBattle.Tests
+        run: dotnet test solution/SpaceBattle.Tests
