@@ -31,10 +31,10 @@ jobs:
           dotnet-version: 7.0.x
 
       - name: Restore dependencies
-        run: dotnet restore SpaceBattle/
+        run: dotnet restore spaceBattle/
 
       - name: Build
-        run: dotnet build SpaceBattle/ --no-restore /p:ContinuousIntegrationBuild=true
+        run: dotnet build spaceBattle/ --no-restore /p:ContinuousIntegrationBuild=true
 
       - name: Unittest and coverage
         run: dotnet test /p:CollectCoverage=true /p:CoverletOutput=TestResults /p:CoverletOutputFormat=cobertura
