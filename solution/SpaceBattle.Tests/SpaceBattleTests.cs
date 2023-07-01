@@ -60,4 +60,5 @@ public class SpaceBattleTests
         {
             Assert.Throws<System.Exception>(() => Spacebattle.ship(coordinates, speed, Position, Speed, Movement));
         }
+        
 }
