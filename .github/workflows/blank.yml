@@ -17,7 +17,7 @@ jobs:
           dotnet-version: 7.0.x
 
       - name: Restore dependencies
-        run: dotnet restore SquareEquationLib
+        run: dotnet restore SpaceBattle
 
       - name: Test Build
         run: dotnet build SpaceBattle --no-restore /p:ContinuousIntegrationBuild=true
