@@ -1,6 +1,6 @@
 ﻿namespace spacebattle
 {
-    public class Spaceship
+    public class Spaceship 
     {
         private int[]? coordinates = null;
         private int[]? speedvector = null;
