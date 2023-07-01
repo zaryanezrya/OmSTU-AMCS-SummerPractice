@@ -2,7 +2,7 @@ name: square equation test
 
 on:
   push:
-    branches: ["square_equation"]
+    branches: ["exercise7/solution"]
 
 jobs:
   build:
@@ -19,8 +19,8 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore SquareEquationLib
 
-      - name: Build
-        run: dotnet build SquareEquationLib --no-restore /p:ContinuousIntegrationBuild=true
+      - name: Test Build
+        run: dotnet build SpaceBattle --no-restore /p:ContinuousIntegrationBuild=true
 
-      - name: Test
-        run: ./SquareEquationTest ./SquareEquationLib/bin/Debug/net7.0/SquareEquationLib.dll
+      - name: Mytest
+        run: dotnet test SpaceBattle.Tests
