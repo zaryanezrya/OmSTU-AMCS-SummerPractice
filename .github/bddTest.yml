@@ -3,7 +3,7 @@ name: square equation test
 
 on:
   push:
-    branches: ["BDD_branch"]
+    branches: ["Scenarios"]
 
 jobs:
   build:
