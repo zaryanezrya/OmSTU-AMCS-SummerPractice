@@ -11,7 +11,7 @@ public class StepDefinitions
     private Exception excep = new Exception();
     [When("вычисляются корни квадратного уравнения")]
     public void AddTheRoots()
-    {
+    { 
         try 
         {
             res = SquareEquation.Solve(ratio[0],ratio[1],ratio[2]);
