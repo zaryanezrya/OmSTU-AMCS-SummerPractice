@@ -15,8 +15,8 @@ namespace Solve.UnitTests
         
         public void Solve_ReturnTwoRoots()
         {
-            double[] expected = { -3d, 1d };
-            double[] actual = _squareEquation.Solve(1d, 2d, -3d);
+            double[] expected = { -3, 1 };
+            double[] actual = SquareEquation.Solve(1, 2, -3);
             Assert.Equal(expected, actual);
         }
 
@@ -24,47 +24,47 @@ namespace Solve.UnitTests
         
         public void Solve_AEqv0_ReturnArgExc()
         {
-            Action act = () => _squareEquation.Solve(1e-7, 1d, 1d);
+            Action act = () => SquareEquation.Solve(1e-10, 1, 1);
             Assert.Throws<System.ArgumentException>(act);
         }
 
         [Theory]
 
-        [InlineData(double.NaN, 1d, 1d)]
-        [InlineData(1d, double.NaN, 1d)]
-        [InlineData(1d, 1d, double.NaN)]
+        [InlineData(double.NaN, 1, 1)]
+        [InlineData(1, double.NaN, 1)]
+        [InlineData(1, 1, double.NaN)]
 
-        [InlineData(double.PositiveInfinity, 1d, 1d)]
-        [InlineData(1d, double.PositiveInfinity, 1d)]
-        [InlineData(1d, 1d, double.PositiveInfinity)]
+        [InlineData(double.PositiveInfinity, 1, 1)]
+        [InlineData(1, double.PositiveInfinity, 1)]
+        [InlineData(1, 1, double.PositiveInfinity)]
 
-        [InlineData(double.NegativeInfinity, 1d, 1d)]
-        [InlineData(1d, double.NegativeInfinity, 1d)]
-        [InlineData(1d, 1d, double.NegativeInfinity)]
+        [InlineData(double.NegativeInfinity, 1, 1)]
+        [InlineData(1, double.NegativeInfinity, 1)]
+        [InlineData(1, 1, double.NegativeInfinity)]
         
         public void Solve_NanOrInf_ReturnArgExc(double a, double b, double c)
         {
-            Action act = () => _squareEquation.Solve(a, b, c);
+            Action act = () => SquareEquation.Solve(a, b, c);
             Assert.Throws<System.ArgumentException>(act);
         }
 
         [Theory]
-        [InlineData(1d, -2d, 1d)]
+        [InlineData(1, -2, 1)]
 
         public void Solve_ReturnOneRoot(double a, double b, double c)
         {
-            double[] expected = { 1d };
-            double[] actual = _squareEquation.Solve(a, b, c);
+            double[] expected = { 1 };
+            double[] actual = SquareEquation.Solve(a, b, c);
             Assert.Equal(expected, actual);
         }
 
         [Theory]
-        [InlineData(1d, 1d, 2d)]
+        [InlineData(1, 1, 2)]
         
         public void Solve_ReturnNoRoots(double a, double b, double c)
         {
             double[] expected = {};
-            double[] actual = _squareEquation.Solve(a, b, c);
+            double[] actual = SquareEquation.Solve(a, b, c);
             Assert.Equal(expected, actual);
         }
     }
