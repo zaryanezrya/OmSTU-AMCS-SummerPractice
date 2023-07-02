@@ -4,10 +4,10 @@ namespace SquareEquationLib;
 
 public class SquareEquation
 {
-    public double[] Solve(double a, double b, double c)
+    public static double[] Solve(double a, double b, double c)
     {
         double d;
-        double eps = 1e-6;
+        double eps = 1e-9;
         double[] roots = Array.Empty<double>();
         
         d = b * b - 4 * a * c;
