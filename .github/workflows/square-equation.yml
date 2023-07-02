@@ -1,0 +1,33 @@
+name: unit_test
+
+on:
+  push:
+    branches: ["unit_test"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: 7.0.x
+
+      - name: Restore dependencies
+        run: dotnet restore SquareEquationLib
+
+      - name: Build
+        run: dotnet build SquareEquationLib/ --no-restore /p:ContinuousIntegrationBuild=true
+
+      - name: Test
+        run: ./SquareEquationTest ./SquareEquationLib/bin/Debug/net7.0/SquareEquationLib.dll
+
+      - name: Coverage
+        run: dotnet test /p:CollectCoverage=true /p:ThresholdType=line /p:Threshold=100
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+        with: 
+          token: 472de5d2-1c6f-4a35-91eb-5ccc8243d7b9
