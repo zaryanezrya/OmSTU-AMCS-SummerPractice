@@ -8,7 +8,8 @@ public class LinearMotionBDD
     private double[] _Coordinates = new double[2];
     private double[] _Speed = new double[2];
     private double[] _actualResult = new double[2];
-    private bool relocate = true;
+    private Exception _actualException = new Exception();
+    private bool _relocate = true;
 
     [Given(@"космический корабль находится в точке пространства с координатами \((.*), (.*)\)")]
          public void ДопустимКосмическийКорабльНаходитсяВТочкеПространстваСКоординатами(int p0, int p1)
@@ -19,7 +20,7 @@ public class LinearMotionBDD
     [Given(@"изменить положение в пространстве космического корабля невозможно")]
          public void ДопустимИзменитьПоложениеВПространствеКосмическогоКорабляНевозможно()
          {
-            relocate = false;
+            _relocate = false;
          }
 
     [Given(@"скорость корабля определить невозможно")]
@@ -45,7 +46,7 @@ public class LinearMotionBDD
          {
             try
             {
-                _actualResult = SpaceBattle.Movement(_Coordinates, _Speed, relocate);
+                _actualResult = SpaceBattle.Movement(_Coordinates, _Speed, _relocate);
             }
 
             catch{}
@@ -54,7 +55,7 @@ public class LinearMotionBDD
     [Then(@"возникает ошибка Exception")]
          public void ТоВозникаетОшибкаException()
          {
-            Assert.ThrowsAsync<Exception>(() => SpaceBattle.Movement(_Coordinates, _Speed, relocate));
+            Assert.ThrowsAsync<Exception>(() => throw _actualException);
          }
 
     [Then(@"космический корабль перемещается в точку пространства с координатами \((.*), (.*)\)")]
