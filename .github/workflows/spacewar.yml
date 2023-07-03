@@ -1,4 +1,5 @@
-name: unit_test
+name: square equation test
+
 on:
   push:
     branches: ["space_war"]
@@ -18,14 +19,5 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore SpaceWar
 
-      - name: Build
-        run: dotnet build SpaceWar --no-restore /p:ContinuousIntegrationBuild=true
-
-      - name: Test
-        run: ./SpaceWarTests ./SpaceWar/bin/Debug/net7.0/SpaceWar.dll
-      
-      - name: UnitTest
-        run: dotnet test
-
-      - name: Coverage
+      - name: Coverage and Tests
         run: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
