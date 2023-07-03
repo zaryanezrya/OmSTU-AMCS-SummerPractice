@@ -2,11 +2,9 @@
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquareEquationLib", "SquareEquationLib\SquareEquationLib.csproj", "{18B38C1A-8AAC-461B-A6CB-5DB6CDB33CDA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceBattle", "SpaceBattle\SpaceBattle.csproj", "{18B38C1A-8AAC-461B-A6CB-5DB6CDB33CDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquareEquation.Tests", "SquareEquation.Tests\SquareEquation.Tests.csproj", "{A0865DF6-2D0F-4BA0-9C6A-86DDAC9916FB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDD.Tests", "BDD.Tests\BDD.Tests.csproj", "{1CD96D7A-4318-4777-85DE-90B47F0B51AB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceBattle.Tests", "SpaceBattle.Tests\SpaceBattle.Tests.csproj", "{1CD96D7A-4318-4777-85DE-90B47F0B51AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
