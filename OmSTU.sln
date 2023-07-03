@@ -2,9 +2,9 @@
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceBattle", "SpaceBattle\SpaceBattle.csproj", "{18B38C1A-8AAC-461B-A6CB-5DB6CDB33CDA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceBattle", "SpaceBattle\SpaceBattle.csproj", "{22282610-21E1-4277-BE4A-F1DC096E7D6A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceBattle.Tests", "SpaceBattle.Tests\SpaceBattle.Tests.csproj", "{1CD96D7A-4318-4777-85DE-90B47F0B51AB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceBattle.Tests", "SpaceBattle.Tests\SpaceBattle.Tests.csproj", "{BE482F5A-E97C-4F95-8841-EF379181B194}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,17 +15,13 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{18B38C1A-8AAC-461B-A6CB-5DB6CDB33CDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{18B38C1A-8AAC-461B-A6CB-5DB6CDB33CDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{18B38C1A-8AAC-461B-A6CB-5DB6CDB33CDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{18B38C1A-8AAC-461B-A6CB-5DB6CDB33CDA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A0865DF6-2D0F-4BA0-9C6A-86DDAC9916FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A0865DF6-2D0F-4BA0-9C6A-86DDAC9916FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A0865DF6-2D0F-4BA0-9C6A-86DDAC9916FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A0865DF6-2D0F-4BA0-9C6A-86DDAC9916FB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1CD96D7A-4318-4777-85DE-90B47F0B51AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1CD96D7A-4318-4777-85DE-90B47F0B51AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1CD96D7A-4318-4777-85DE-90B47F0B51AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1CD96D7A-4318-4777-85DE-90B47F0B51AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22282610-21E1-4277-BE4A-F1DC096E7D6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22282610-21E1-4277-BE4A-F1DC096E7D6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22282610-21E1-4277-BE4A-F1DC096E7D6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22282610-21E1-4277-BE4A-F1DC096E7D6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE482F5A-E97C-4F95-8841-EF379181B194}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE482F5A-E97C-4F95-8841-EF379181B194}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE482F5A-E97C-4F95-8841-EF379181B194}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE482F5A-E97C-4F95-8841-EF379181B194}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
