@@ -22,4 +22,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SpaceBattleLib\SpaceBattleLib.csproj" />
+  </ItemGroup>
+
 </Project>
