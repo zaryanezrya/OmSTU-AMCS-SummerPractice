@@ -20,7 +20,7 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore spaceBattle/
 
-      - name: Test Build
+      - name: Build
         run: dotnet build spaceBattle/ --no-restore /p:ContinuousIntegrationBuild=true
 
       - name: Run tests
