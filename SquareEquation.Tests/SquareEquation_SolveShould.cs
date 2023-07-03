@@ -5,15 +5,8 @@ namespace Solve.UnitTests
 {
     public class SquareEquation_SolveShould
     {
-        private SquareEquation _squareEquation;
-        public SquareEquation_SolveShould()
-        {
-            _squareEquation = new SquareEquation();
-        }
-
         [Fact]
-        
-        public void Solve_ReturnTwoRoots()
+        public void Solve_1_2_n3_Return_n3_1()
         {
             double[] expected = { -3, 1 };
             double[] actual = SquareEquation.Solve(1, 2, -3);
@@ -48,23 +41,21 @@ namespace Solve.UnitTests
             Assert.Throws<System.ArgumentException>(act);
         }
 
-        [Theory]
-        [InlineData(1, -2, 1)]
+        [Fact]
 
-        public void Solve_ReturnOneRoot(double a, double b, double c)
+        public void Solve_1_n2_1_Return_1()
         {
             double[] expected = { 1 };
-            double[] actual = SquareEquation.Solve(a, b, c);
+            double[] actual = SquareEquation.Solve(1, -2, 1);
             Assert.Equal(expected, actual);
         }
 
-        [Theory]
-        [InlineData(1, 1, 2)]
+        [Fact]
         
-        public void Solve_ReturnNoRoots(double a, double b, double c)
+        public void Solve_1_1_2_Return_EmptArr()
         {
             double[] expected = {};
-            double[] actual = SquareEquation.Solve(a, b, c);
+            double[] actual = SquareEquation.Solve(1, 1, 2);
             Assert.Equal(expected, actual);
         }
     }
