@@ -20,4 +20,4 @@ jobs:
         run: dotnet restore SpaceBattle
 
       - name: Coverage and Tests
-        run: dotnet test --collect:"XPlat Code Coverage"
+        run: cd SpaceBattle && dotnet test --collect:"XPlat Code Coverage"
