@@ -1,5 +1,4 @@
-ame: square equation test
-
+name: unit_test
 on:
   push:
     branches: ["space_war"]
@@ -17,7 +16,16 @@ jobs:
           dotnet-version: 7.0.x
 
       - name: Restore dependencies
-        run: dotnet restore SpaceWar
+        run: dotnet restore SquareEquationLib
 
-      - name: Coverage and Tests
+      - name: Build
+        run: dotnet build SquareEquationLib --no-restore /p:ContinuousIntegrationBuild=true
+
+      - name: Test
+        run: ./SpaceWarTests ./SpaceWar/bin/Debug/net7.0/SquareEquationLib.dll
+      
+      - name: UnitTest
+        run: dotnet test
+
+      - name: Coverage
         run: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
