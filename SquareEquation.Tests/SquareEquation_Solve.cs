@@ -31,7 +31,7 @@ namespace SquareEquationLib.Tests
 
             if (act.Length != expected.Length) Assert.Fail("The number of roots does not match");
         
-            for (int i = 0; i < act.Length;i++){
+            for (int i = 0; i < act.Length; i++){
                 Assert.Equal(expected[i], act[i], 6);
             }
         }
