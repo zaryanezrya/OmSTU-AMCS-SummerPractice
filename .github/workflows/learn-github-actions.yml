@@ -23,5 +23,8 @@ jobs:
       - name: Build
         run: dotnet build SpaceBattle --no-restore /p:ContinuousIntegrationBuild=true
 
-      - name: SpaceBattle-Unit-Test
-        run: dotnet test --collect:"XPlat Code Coverage"
+      - name: Gherkin Unittests build 
+        run: dotnet build ./GherkinUnitTests/Unittestscoverage
+      
+      - name: Gherkin UnitTests run
+        run: dotnet test ./GherkinUnitTests/Unittestscoverage /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=lcov
