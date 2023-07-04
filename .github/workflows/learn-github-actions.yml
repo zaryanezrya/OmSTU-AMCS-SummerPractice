@@ -23,5 +23,10 @@ jobs:
       - name: Build
         run: dotnet build SpaceBattle --no-restore /p:ContinuousIntegrationBuild=true
 
-      - name: SpaceBattle-Unit-Test
-        run: cd SpaceBattle.Tests && dotnet test
+      - name: Unit-Test
+        run: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
+
+      - name: Codecov
+        uses: codecov/codecov-action@v3
+        with: 
+          token: 4475362d-62ea-4635-b3a6-21810c3f7176
