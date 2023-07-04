@@ -23,12 +23,15 @@
 
         public double[] MovingAction()
         {
-            if (startCoordinates is not null & speedCoordinates is not null & abilityToMove)
+            if (startCoordinates is null & speedCoordinates is null & not abilityToMove)
             {
-                return new double[] { startCoordinates[0] + speedCoordinates[0], startCoordinates[1] +speedCoordinates[1] };
+                throw new Exception("check the values, maybe something is set as null!");
             }
 
-            else { throw new Exception("check the values, maybe something is set as null!"); }
+            else 
+            { 
+                return new double[] { startCoordinates[0] + speedCoordinates[0], startCoordinates[1] +speedCoordinates[1] }; 
+            }
         }
     }
 }
