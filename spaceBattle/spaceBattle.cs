@@ -23,7 +23,7 @@
 
         public double[] MovingAction()
         {
-            if (startCoordinates == null & speedCoordinates == null & not abilityToMove)
+            if (startCoordinates == null || speedCoordinates == null || !abilityToMove)
             {
                 throw new Exception("check the values, maybe something is set as null!");
             }
