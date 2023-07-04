@@ -2,7 +2,6 @@ namespace SpaceBattle.Tests;
 using SpaceBattle;
 using TechTalk.SpecFlow;
 
-
 [Binding]
 public class StepDefinitions
 {
