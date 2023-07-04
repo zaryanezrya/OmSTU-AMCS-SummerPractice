@@ -24,6 +24,6 @@ public class SquareEquation
 
         if(D < 0) return new double[0];
 
-        return new double[] {x1, x2};
+        return new double[] {x1,x2};
     }
 }
