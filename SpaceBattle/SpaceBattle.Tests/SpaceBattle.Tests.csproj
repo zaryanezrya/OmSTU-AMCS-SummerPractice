@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="/root/OmSTU-AMCS-SummerPractice2023/SpaceBattle/SpaseBattleLib/SpaseBattleLib.csproj" />
+    <ProjectReference Include="/root/OmSTU-AMCS-SummerPractice2023/SpaceBattle/SpaceBattleLib/SpaceBattleLib.csproj" />
   </ItemGroup>
 
 </Project>

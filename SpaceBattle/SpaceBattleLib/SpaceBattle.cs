@@ -1,11 +1,11 @@
-﻿namespace SpaseBattleLib;
-public class SpaseShip
+﻿namespace SpaceBattleLib;
+public class SpaceShip
 {
     public double[] position= new double[2]{double.NaN, double.NaN};
     public double[] speed= new double[2]{double.NaN,double.NaN};
     public bool can_ship_fly= true;
 
-    public void SpaceShip()
+    public void Space_Ship()
     {}
 
     public void SetPosition(double[] pos)
