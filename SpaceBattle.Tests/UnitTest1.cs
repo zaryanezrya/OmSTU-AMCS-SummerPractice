@@ -2,12 +2,13 @@ namespace SpaceBattle.Tests;
 using SpaceBattle;
 using TechTalk.SpecFlow;
 
+
 [Binding]
 public class StepDefinitions
 {
     private double[] pos = new double[2];
     private Exception exp = new Exception();
-    public SpaceShip spaceShip = new SpaceShip();
+    private SpaceShip spaceShip = new SpaceShip();
     [When("происходит прямолинейное равномерное движение без деформации")]
     public void CalculatedTheMovement()
     {

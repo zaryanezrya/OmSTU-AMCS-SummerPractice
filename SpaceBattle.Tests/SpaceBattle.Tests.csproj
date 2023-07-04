@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="/root/OmSTU-AMCS-SummerPractice2023/SpaceBattle/SpaceBattle.csproj" />
+    <ProjectReference Include="..\SpaceBattle\SpaceBattle.csproj" />
   </ItemGroup>
 
 </Project>
