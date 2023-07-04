@@ -1,5 +1,5 @@
 namespace SpaceBattle.Tests;
-using SpaceBattleLib;
+using SpaceBattle;
 using TechTalk.SpecFlow;
 
 

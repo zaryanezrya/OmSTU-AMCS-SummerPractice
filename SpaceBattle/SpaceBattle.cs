@@ -1,11 +1,12 @@
-﻿namespace SpaceBattleLib;
+﻿namespace SpaceBattle;
 public class SpaceShip
 {
-    public double[] position= new double[2]{double.NaN, double.NaN};
-    public double[] speed= new double[2]{double.NaN,double.NaN};
-    public bool can_ship_fly= true;
+    
+    public double[] position = new double[2]{double.NaN, double.NaN};
+    public double[] speed = new double[2]{double.NaN, double.NaN};
+    public bool possibility_of_movement = true;
 
-    public void Space_Ship()
+    public SpaceShip()
     {}
 
     public void SetPosition(double[] pos)
@@ -17,9 +18,10 @@ public class SpaceShip
         this.speed = speed;
     }
 
-    public void SetSPosOfMove(bool can_ship_fly){
-        this.can_ship_fly = can_ship_fly;
+    public void SetSPosOfMove(bool possibility_of_movement){
+        this.possibility_of_movement = possibility_of_movement;
     }
+
     public double[] Movement (){
         if(double.IsNaN(position[0]) || double.IsNaN(position[1])){
             throw new Exception();
@@ -27,7 +29,7 @@ public class SpaceShip
         else if (double.IsNaN(speed[0]) || double.IsNaN(speed[1])){
             throw new Exception();
         }
-        else if (can_ship_fly==false){
+        else if (possibility_of_movement==false){
             throw new Exception();
         }
         else{
@@ -36,5 +38,4 @@ public class SpaceShip
             return position;
         }
     }
-}
-
+ }
