@@ -2,8 +2,8 @@
 {
     public class SpaceShip
     {
-        private double[]? startCoordinates = null;
-        private double[]? speedCoordinates = null;
+        private double[]? startCoordinates;
+        private double[]? speedCoordinates;
         private bool abilityToMove = true;
 
         public void SetCoordinates(double x, double y)
