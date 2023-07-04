@@ -9,7 +9,7 @@ public class SquareEquation
         if (Math.Abs(a) < E)
             throw new System.ArgumentException();
 
-        foreach (double x in new double[] {a, b, c})
+        foreach (double x in new double[] {a, b, c })
         {
             if (double.IsNaN(x) || double.IsInfinity(x))
                 throw new System.ArgumentException();
