@@ -1,10 +1,1 @@
-namespace SpaceBattle.Tests;
-
-public class UnitTest1
-{
-    [Fact]
-    public void Test1()
-    {
-
-    }
-}
+4475362d-62ea-4635-b3a6-21810c3f7176
