@@ -7,7 +7,7 @@ public class StepDefinitions
 {
     private double[] pos = new double[2];
     private Exception exp = new Exception();
-    private SpaceShip spaceShip = new SpaceShip();
+    public SpaceShip spaceShip = new SpaceShip();
     [When("происходит прямолинейное равномерное движение без деформации")]
     public void CalculatedTheMovement()
     {
