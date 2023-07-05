@@ -1,16 +1,26 @@
 ﻿namespace SpaceBattleLib;
 
-public class LinearMotion
+public class SpaceShip
 {
-    public double[] Coordinates {get; set;} 
-    public double[] Speed {get; set;}
-    public bool relocate {get; set;}
+    public double[] Coordinates {get;set;}
+    public double[] Speed {get;set;}
+    public double amountFuel {get;set;}
+    public double fuelConsumption {get;set;}
+    public double angleInclination {get;set;}
+    public double angularVelocity {get;set;}
+    public bool relocate {get;set;}
+    public bool reversalPossibility {get;set;}
 
-    public LinearMotion()
+    public SpaceShip()
     {
         this.Coordinates = new double[2];
         this.Speed = new double[2];
         this.relocate = true;
+        this.amountFuel = 0;
+        this.fuelConsumption = 0;
+        this.angleInclination = 0;
+        this.angularVelocity = 0;
+        this.reversalPossibility = true;
     }
     public void Movement()
     {
@@ -26,35 +36,11 @@ public class LinearMotion
             Coordinates[i] += Speed[i];
         }
     }
-}
-
-public class MovementFuel
-{
-    public double amountFuel {get; set;}
-    public double fuelConsumption {get; set;}
-    public MovementFuel()
-    {
-        this.amountFuel = 0;
-        this.fuelConsumption = 0;
-    }
     public void AbilityMove()
     {
         if (fuelConsumption > amountFuel) throw new System.Exception();
 
         amountFuel -= fuelConsumption;
-    }
-}
-
-public class ReversalPossibility
-{
-    public double angleInclination {get; set;} 
-    public double angularVelocity {get; set;} 
-    public bool reversalPossibility {get; set;}
-    public ReversalPossibility()
-    {
-        this.angleInclination = 0;
-        this.angularVelocity = 0;
-        this.reversalPossibility = true;
     }
     public void Reversal()
     {
