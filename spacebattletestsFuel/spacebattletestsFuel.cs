@@ -28,7 +28,7 @@ public class ТопливоКорабля
     [When(@"происходит прямолинейное равномерное движение без деформации")]
     public void ПроисходитПрямолинейноеРавномерноеДвижениеБезДеформации()
     {
-        _result = new Lazy<double[]>(() => ShipFuel.ShipMoving(_fuelhas, _fueltaken));
+        _result = new Lazy<double>(() => ShipFuel.ShipMoving(_fuelhas, _fueltaken));
     }
 
     [Then(@"новый объем топлива космического корабля равен (.*) ед")]
