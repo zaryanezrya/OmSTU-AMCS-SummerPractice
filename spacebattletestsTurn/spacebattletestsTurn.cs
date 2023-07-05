@@ -49,7 +49,7 @@ public class ИгровойОбъектМожетПеремещатьсяПоП�
     [When(@"происходит вращение вокруг собственной оси")]
     public void ПроисходитВращениеВокругСобственнойОси()
     {
-       _result = new Lazy<double[]>(() => ShipTurn.ShipMoving(_start, _degree, _isAllowToTurn, _IsPosition, _IsDegree));
+       _result = new Lazy<double>(() => ShipTurn.ShipMoving(_start, _degree, _isAllowToTurn, _IsPosition, _IsDegree));
     }
 
     [Then(@"угол наклона космического корабля к оси OX составляет (.*) град")]
