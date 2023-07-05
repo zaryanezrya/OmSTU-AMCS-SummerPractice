@@ -11,7 +11,7 @@ public class ИгровойОбъектМожетПеремещатьсяПоП�
     private bool _isAllowToTurn = true;
     private bool _IsDegree = true;
     private bool _IsPosition = true; 
-    private double _result;
+    private Lazy<double> _result = default!;
     public ИгровойОбъектМожетПеремещатьсяПоПрямой(ScenarioContext scenarioContext)
     {
         _scenarioContext = scenarioContext;
@@ -49,21 +49,18 @@ public class ИгровойОбъектМожетПеремещатьсяПоП�
     [When(@"происходит вращение вокруг собственной оси")]
     public void ПроисходитВращениеВокругСобственнойОси()
     {
-        try{
-        _result = ShipTurn.ShipMoving(_start, _degree, _isAllowToTurn, _IsPosition, _IsDegree);
-        }
-        catch{}
+       _result = new Lazy<double[]>(() => ShipTurn.ShipMoving(_start, _degree, _isAllowToTurn, _IsPosition, _IsDegree));
     }
 
     [Then(@"угол наклона космического корабля к оси OX составляет (.*) град")]
     public void УголНаклонаКосмическогоКорабляКОсиOXСоставляет(double p0)
     {
-        Assert.Equal(p0, _result);
+        Assert.Equal(p0, _result.Value);
     }
 
     [Then(@"возникает ошибка Exception")]
     public void ВозникаетОшибкаException ()
     {
-        Assert.Throws<Exception>(() => ShipTurn.ShipMoving(_start, _degree, _isAllowToTurn, _IsPosition, _IsDegree));
+        Assert.Throws<Exception>(() => _result.Value);
     }
 }}

@@ -8,7 +8,7 @@ public class ТопливоКорабля
     private readonly ScenarioContext _scenarioContext;
     private double _fuelhas;
     private double _fueltaken;
-    private double _result;
+    private Lazy<double> _result = default!;
     public ТопливоКорабля(ScenarioContext scenarioContext)
     {
         _scenarioContext = scenarioContext;
@@ -28,21 +28,18 @@ public class ТопливоКорабля
     [When(@"происходит прямолинейное равномерное движение без деформации")]
     public void ПроисходитПрямолинейноеРавномерноеДвижениеБезДеформации()
     {
-        try{
-        _result = ShipFuel.ShipMoving(_fuelhas, _fueltaken);
-        }
-        catch{}
+        _result = new Lazy<double[]>(() => ShipFuel.ShipMoving(_fuelhas, _fueltaken));
     }
 
     [Then(@"новый объем топлива космического корабля равен (.*) ед")]
     public void НовыйОбъемТопливаКосмическогоКорабляРавен(double p0)
     {
-        Assert.Equal(p0, _result);
+        Assert.Equal(p0, _result.Value);
     }
 
     [Then(@"возникает ошибка Exception")]
     public void ВозникаетОшибкаException ()
     {
-        Assert.Throws<Exception>(() => ShipFuel.ShipMoving(_fuelhas, _fueltaken));
+        Assert.Throws<Exception>(() => _result.Value);
     }
 }}
