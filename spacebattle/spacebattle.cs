@@ -9,5 +9,6 @@ public class SpaceShip
         }
         double[] total = {Position[0] + Speed[0], Position[1] + Speed[1]};
         return total;
+        int test=3;
     }
 }
